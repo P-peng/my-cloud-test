@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ge</artifactId>
+        <artifactId>order-feign</artifactId>
         <groupId>com.ge</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>order</artifactId>
+    <artifactId>order-server</artifactId>
 
     <dependencies>
         <!-- SpringCloud Ailibaba nacos -->
@@ -41,6 +41,30 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+
+        <!-- 会员服务接口依赖 -->
+        <dependency>
+            <groupId>com.ge</groupId>
+            <artifactId>member-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
     </dependencies>
 
+    <build>
+        <plugins>
+            <!-- 扫描springboot启动主类, 注意，父模块不能存在这个插件-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

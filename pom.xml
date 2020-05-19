@@ -17,11 +17,12 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
-        <!-- SpringCloud版本号，官方最新稳定版本 -->
-        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+        <!-- Hoxton.SR3 SpringCloud版本号，官方最新稳定版本 -->
+        <spring-cloud.version>2.2.2.RELEASE</spring-cloud.version>
         <spring-boot.mybatis>2.1.2</spring-boot.mybatis>
         <druid.version>1.1.14</druid.version>
         <fastjson.version>1.2.68</fastjson.version>
+        <mysql.version>8.0.19</mysql.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -76,6 +77,13 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
+            <!-- Mysql Connector -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -83,6 +91,8 @@
         <module>nacos</module>
         <module>order</module>
         <module>member</module>
+        <module>member-feign</module>
+        <module>order-feign</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -106,6 +116,7 @@
 
     <build>
         <plugins>
+            <!-- maven打包插件 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -115,6 +126,18 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
+
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>repackage</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
