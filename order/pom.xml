@@ -25,10 +25,10 @@
         </dependency>
 
         <!-- SpringCloud Netflix Hystrix -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
+<!--        </dependency>-->
 
         <!-- SpringBoot Web -->
         <dependency>
@@ -37,10 +37,10 @@
         </dependency>
 
         <!-- openfeign本地负载均衡 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-openfeign</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>
