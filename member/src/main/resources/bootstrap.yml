@@ -39,13 +39,14 @@ spring:
 xxl:
   job:
     admin:
-      addresses: http://127.0.0.1:8080/xxj-job-admin
+      addresses: http://127.0.0.1:8080/xxl-job-admin
     executor:
       appname: member
       ip: 127.0.0.1
       port: 9999
       logpath: D:/home/logs/xxl-job/
       logretentiondays: -1
+    accessToken:
 
 ### mybatis 扫描配置 ###
 mybatis:
